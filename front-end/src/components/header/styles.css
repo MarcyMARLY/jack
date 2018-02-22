@@ -2,8 +2,8 @@
     width: 90%;
     margin: 0 auto;
     background-color: white;
-    padding: 10px 0 15px 0;
-    font-family: "Helvetica Neue";
+    padding: 5px 0 15px 0;
+    font-family: "Helvetica Neue", serif;
 }
 
 .navigation-link {
@@ -25,8 +25,8 @@ ul.navbar-nav li {
 }
 
 .btn-like {
-    color: #1de9b6;
-    border: 2px solid #1de9b6 !important;
+    color: #FF8A80;
+    border: 2px solid #FF8A80 !important;
     border-radius: 3px;
 }
 
@@ -34,4 +34,3 @@ ul.navbar-nav li {
     color: #bbdefb;
     border-bottom: 2px solid #e3f2fd;
 }
-

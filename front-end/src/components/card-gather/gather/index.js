@@ -1,10 +1,13 @@
-import Component from 'react'
+import React from 'react'
 
-class CardGather extends Component {
+class CardGather extends React.Component {
 
     render() {
         return (
-            <h1>Laaaaalka</h1>
+            <div>
+                <h3>{this.props.id}</h3>
+                <h1>{this.props.title}</h1>
+            </div>
         )
     }
 }

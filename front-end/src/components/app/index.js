@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../header/index'
+import CardGather from "../card-gather/gather";
+import CardsBoard from "../card-gather-board";
 
 class App extends Component {
   render() {
     return (
       <div>
           <Header />
-          <div class = 'jackTitle'>
-          </div>
-          <h1>Hello, Jack</h1>
+          <CardsBoard />
       </div>
     );
   }

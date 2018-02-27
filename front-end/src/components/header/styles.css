@@ -1,13 +1,19 @@
 .navigation-container {
     width: 90%;
     margin: 0 auto;
-    background-color: white;
-    padding: 5px 0 15px 0;
+    background-color: #111;
+    padding: 5px 0 5px 0;
     font-family: "Helvetica Neue", serif;
+}
+.nav-item a{
+  color: #e87443 !important;
+}
+.nav-item a:hover{
+  color: #d16436 !important;
 }
 
 .navigation-link {
-    color: #90caf9;
+    color: #e87443;
     padding: 0.5em 0 0.5em 0;
     border: 2px solid transparent;
 }
@@ -17,7 +23,7 @@ ul.navbar-nav li {
 }
 
 .navigation-link-active {
-    border-bottom: 2px solid #64b5f6;
+    border-bottom: 2px solid #e87443;
 }
 
 .navigation {
@@ -25,12 +31,16 @@ ul.navbar-nav li {
 }
 
 .btn-like {
-    color: #FF8A80;
-    border: 2px solid #FF8A80 !important;
+    color: #e87443;
+    border: 2px solid #e87443 !important;
     border-radius: 3px;
 }
-
+.masthead-brand-jack{
+  font-size: 2rem;
+  color:	#d16436;
+  float: left;
+}
 .navigation-link:hover {
-    color: #bbdefb;
+    color: #d16436;
     border-bottom: 2px solid #e3f2fd;
 }

@@ -22,10 +22,41 @@
   font-size: large;
 }
 .jackTitle {
-  background-image: url('../../images/jackTitle.png');
-  height: 800px; width: 100%;
-}
+  background-image: url('../../images/jackTitleEmpty.png');
+  height: 600px; width: 100%;
+  color:	#fd9900;
 
+}
+.main{
+  background-color: #111;
+  height: 100%;
+}
+.jack-heading{
+    font-size: 6rem;
+    color:	#e87443;
+    padding-top:200px;
+    text-shadow: 0 0.05rem 0.1rem rgba(0,0,0,0.5);
+}
+.leadJ{
+  font-size: 1.5rem;
+  color:	#d16436;
+}
+.masthead-brand-jack{
+  font-size: 1rem;
+  color:	#d16436;
+  float: left;
+}
+.organization-body{
+  padding: 50px;
+  background-color: white;
+  width: 100%;
+}
+.jack-footer{
+  padding:50px;
+  width: 100%;
+  color:white;
+  font-size: 1rem;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

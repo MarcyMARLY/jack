@@ -10,9 +10,12 @@ class Header extends React.Component {
 
     render () {
         return (
+          <div class = "main">
             <div className="navigation-container">
                 <nav className="navbar navbar-expand-lg navigation-container">
+                                    <h3 class="masthead-brand-jack">JACK</h3>
                     <div className="collapse navbar-collapse justify-content-end navigation-container" id="navbarNav">
+
                         <ul className="navbar-nav">
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Organization</a>
@@ -30,6 +33,7 @@ class Header extends React.Component {
                     </div>
                 </nav>
             </div>
+          </div>
         )
     }
 }

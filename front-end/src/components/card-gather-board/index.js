@@ -1,12 +1,12 @@
-import React from 'react'
+import {React, Component} from 'react'
 
-class Board extends React.Component {
+class Board extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
-            cards: []
+            gathers: []
         }
     }
 
@@ -17,3 +17,5 @@ class Board extends React.Component {
         )
     }
 }
+
+export default Board

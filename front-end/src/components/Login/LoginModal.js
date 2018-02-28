@@ -3,13 +3,13 @@ import './styles.css';
 
 class LoginModal extends Component{
   render() {
-    //if(this.props.isLogin){
+
       return(
 
         <div class='modal'>
           <div class = 'modal-body'>
             <div class="container">
-              <span class="close">&times;</span>
+              <span class="close" onClick = {this.props.onLoginClose}>&times;</span>
               <form class="form-signin">
                 <h2 class="form-signin-heading">Login</h2>
 
@@ -26,9 +26,7 @@ class LoginModal extends Component{
         </div>
 
       );
-  /*  } else {
-      return null;
-    }*/
+
 
   }
 }

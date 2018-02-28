@@ -1,15 +1,16 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
+import Registration from '../Registration/RegistrationModal'
+import Login from '../Login/LoginModal'
 
 class Header extends React.Component {
 
-    constructor(props) {
-        super(props)
-    }
+
 
     render () {
         return (
+
           <div class = "main">
             <div className="navigation-container">
                 <nav className="navbar navbar-expand-lg navigation-container">
@@ -26,10 +27,10 @@ class Header extends React.Component {
                             <li className="nav-item">
                                 <a className="nav-link" href="#">Help</a>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item" onClick = {this.props.onRegistrationOpen}>
                                 <a className="nav-link btn-like" href="#">Registration</a>
                             </li>
-                            <li className="nav-item">
+                            <li className="nav-item" onClick = {this.props.handleLoginOpen}>
                                 <a className="nav-link btn-like" href="#">Login</a>
                             </li>
                         </ul>

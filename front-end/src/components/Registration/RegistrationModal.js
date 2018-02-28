@@ -3,13 +3,11 @@ import './styles.css';
 
 class RegistrationModal extends Component{
   render() {
-    //if(this.props.isRegistration){
       return(
-
         <div class='modal'>
           <div class = 'modal-body'>
             <div class="container">
-              <span class="close">&times;</span>
+              <span class="close" onClick = {this.props.onRegistrationClose}>&times;</span>
               <form class="form-signin">
                 <h2 class="form-signin-heading">Register</h2>
 
@@ -30,11 +28,8 @@ class RegistrationModal extends Component{
             </div>
           </div>
         </div>
-
       );
-  /*  } else {
-      return null;
-    }*/
+
 
   }
 }

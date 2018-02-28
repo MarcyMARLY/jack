@@ -5,10 +5,11 @@ import App from './components/app/index';
 import CardView from './components/card/card-view/CardView';
 import RegistrationModal from './components/Registration/RegistrationModal';
 import LoginModal from './components/Login/LoginModal';
+import OrganizationTemplate from './components/organization/organizationTemplate';
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
 
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <OrganizationTemplate/>
     </BrowserRouter>,
     document.getElementById('root'));

@@ -3,6 +3,7 @@ import './styles.css';
 import Header from '../header/index'
 import Registration from '../Registration/RegistrationModal'
 import Login from '../Login/LoginModal'
+import Footer from '../footer/index'
 
 class App extends Component {
   constructor(props) {
@@ -23,13 +24,13 @@ class App extends Component {
       isRegistration:false,
       isLogin:true
     });
-  }
+  };
   handleRegistrationClose = () =>{
     this.setState({
       isRegistration:false,
       isLogin:false
     });
-  }
+  };
   handleLoginClose = () =>{
     this.setState({
       isRegistration:false,
@@ -75,9 +76,7 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-              <div class = 'jack-footer'>
-              <p class = 'float-left'><label>Contacts</label></p>
-              </div>
+              <Footer/>
             </div>
             </div>
           </div>
@@ -121,9 +120,7 @@ class App extends Component {
                   </div>
                 </div>
               </div>
-              <div class = 'jack-footer'>
-              <p class = 'float-left'><label>Contacts</label></p>
-              </div>
+              <Footer/>
             </div>
             </div>
           </div>
@@ -167,9 +164,7 @@ class App extends Component {
                 </div>
               </div>
             </div>
-            <div class = 'jack-footer'>
-            <p class = 'float-left'><label>Contacts</label></p>
-            </div>
+            <Footer/>
           </div>
         </div>
         </div>

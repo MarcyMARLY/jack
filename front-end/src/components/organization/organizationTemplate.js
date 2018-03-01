@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './styles.css';
 import OrganizationDescription from './organizationDescription';
 import OrganozationHeader from './organzationHeader';
+import Footer from '../footer/index'
 
 class organizationTemplate extends Component{
   render(){
@@ -9,6 +10,7 @@ class organizationTemplate extends Component{
       <div>
         <OrganozationHeader/>
         <OrganizationDescription/>
+        <Footer/>
       </div>
     );
   }

@@ -1,12 +1,11 @@
 .circle {
-
-  margin:10px;
-	border-radius: 50%;
-	width: 20px;
-	height: 20px;
+  margin: 10px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
   background-color: white;
-	/* width and height can be anything, as long as they're equal */
 }
+
 .circles-jack{
   background-image: url(../../../images/jackTitleEmpty.png);
   border-radius: 10px;
@@ -15,19 +14,21 @@
   width:298px;
   display:block;
 }
-.card-jack{
-  width:300px;
+
+.card-jack {
+  width: 300px;
   background-color: white;
   height: 150px;
-  margin:30px;
+  margin: 30px;
   border-radius: 10px;
   border: 0.5px solid white;
 }
+
 .card-body-name{
   float: left;
   font-size: 1rem;
 }
-.card-body-info{
 
+.card-body-info{
   float: right;
 }

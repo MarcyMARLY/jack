@@ -6,6 +6,7 @@ import CardView from './components/card/card-view/CardView';
 import RegistrationModal from './components/registration/RegistrationModal';
 import LoginModal from './components/Login/LoginModal';
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
+import Landing from "./components/landing";
 
 ReactDOM.render(
     <BrowserRouter>

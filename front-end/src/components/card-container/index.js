@@ -1,16 +1,14 @@
 import React from 'react'
 import './styles.css'
 import CardMaker from "../card/card-maker";
+import CardView from "../card/card-view/CardView";
 
 class CardContainer extends React.Component {
 
     render() {
         return (
             <div className="card-container">
-                <CardMaker />
-                <CardMaker />
-                <CardMaker />
-                <CardMaker />
+                <CardView />
                 <CardMaker />
             </div>
         )

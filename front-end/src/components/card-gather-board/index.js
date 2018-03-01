@@ -1,6 +1,7 @@
 import React from 'react'
 import GatherList from "../card-gather/gather-list";
 import GatherMaker from "../card-gather/gather-maker";
+import Header from "../header";
 
 class CardsBoard extends React.Component {
 
@@ -27,9 +28,12 @@ class CardsBoard extends React.Component {
 
     render() {
         return(
-            <div className="container">
-                <GatherList gathers={this.state.gathers} />
-                <GatherMaker onGatherCreateModalSubmit={this.handleGatherCreation} />
+            <div>
+                <Header />
+                <div className="container">
+                    <GatherList gathers={this.state.gathers} />
+                    <GatherMaker onGatherCreateModalSubmit={this.handleGatherCreation} />
+                </div>
             </div>
         )
     }

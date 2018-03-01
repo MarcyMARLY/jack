@@ -27,6 +27,9 @@
   color:	#fd9900;
 
 }
+html .base_jack{
+  width:100%;
+}
 .main{
   background-color: #111;
   height: 100%;

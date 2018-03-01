@@ -4,7 +4,7 @@ import OrganizationDescription from './organizationDescription';
 import OrganozationHeader from './organzationHeader';
 import Footer from '../footer/index'
 
-class organizationTemplate extends Component{
+class OrganizationTemplate extends Component{
   render(){
     return(
       <div>
@@ -16,4 +16,4 @@ class organizationTemplate extends Component{
   }
 }
 
-export default organizationTemplate;
+export default OrganizationTemplate;

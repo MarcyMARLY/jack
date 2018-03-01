@@ -12,7 +12,7 @@ import Landing from "./components/landing";
 
 ReactDOM.render(
     <BrowserRouter>
-        <OrganizationTemplate/>
+        <App/>
     </BrowserRouter>,
     document.getElementById('root'));
 

@@ -1,8 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import '../header/styles.css'
-import Registration from '../Registration/RegistrationModal'
-import Login from '../Login/LoginModal'
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component {
 
@@ -19,14 +18,13 @@ class Header extends React.Component {
 
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Organization</a>
+
+                                <Link className ="nav-link" to="/organization">Organization</Link>
                             </li>
                             <li className="nav-item">
-                                <a className="nav-link" href="#">Cards</a>
+                                <Link className ="nav-link" to="/board">Board</Link>
                             </li>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">Help</a>
-                            </li>
+
                             <li className="nav-item">
                                 <a className="nav-link btn-like" href="#">Log out</a>
                             </li>

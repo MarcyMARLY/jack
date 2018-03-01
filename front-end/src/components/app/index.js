@@ -5,6 +5,7 @@ import Landing from "../landing";
 import CardsBoard from "../card-gather-board";
 import Switch from "react-router-dom/es/Switch";
 import Route from "react-router-dom/es/Route";
+import OrganizationTemplate from "../organization/organizationTemplate";
 
 class App extends Component {
     render() {
@@ -13,6 +14,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Landing} />
                 <Route path="/board" component={CardsBoard} />
+                <Route path="/organization" component={OrganizationTemplate} />
               </Switch>
             </div>
         );

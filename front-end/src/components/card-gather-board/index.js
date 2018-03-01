@@ -35,6 +35,19 @@ class CardsBoard extends React.Component {
         }
     }
 
+    createCard = (e, t, gatherId) => {
+        let gather = this.state.gathers.slice();
+
+        gather.filter(gather => gather.id == gatherId)[0].cards.push({
+            title: e,
+            dueDate: t,
+        });
+
+        this.setState({
+            gathers: gather
+        });
+        console.log("Card created" + e + t);
+    };
 
     handleGatherCreation = (gatherObject) => {
         let gatherListCopy = this.state.gathers.slice();
@@ -50,7 +63,7 @@ class CardsBoard extends React.Component {
             <div>
                 <Header />
                 <div className="container">
-                    <GatherList gathers={this.state.gathers} />
+                    <GatherList gathers={this.state.gathers} onCreateCard={this.createCard} />
                     <GatherMaker onGatherCreateModalSubmit={this.handleGatherCreation} />
                 </div>
             </div>

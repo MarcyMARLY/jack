@@ -9,7 +9,8 @@ class GatherList extends React.Component {
                 key={gather.id}
                 id={gather.id}
                 title={gather.title}
-                cards={gather.cards} />
+                cards={gather.cards}
+                onCreateCard={this.props.onCreateCard}/>
             )
         );
 

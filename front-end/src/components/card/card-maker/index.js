@@ -23,13 +23,12 @@ class CardMaker extends React.Component {
         });
     };
 
-
     render() {
 
             return (
                 <div className="card-maker">
                     <button onClick={this.handleCardModalOpen}>Create</button>
-                    <CardModal isCreateCard = {this.state.isCreateCard} onCloseClicked = {this.handleCardModalClose}/>
+                    <CardModal gatherId={this.props.gatherId} isCreateCard = {this.state.isCreateCard} onCloseClicked = {this.handleCardModalClose} onCreateCard = {this.props.onCreateCard}/>
                 </div>
             );
     }

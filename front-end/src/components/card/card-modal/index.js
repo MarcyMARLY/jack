@@ -15,7 +15,36 @@ const customStyles = {
     }
 };
 
-class CardModal extends Component{
+class CardModal extends Component {
+
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            title:'',
+            deadline:''
+        }
+
+
+
+    }
+
+    handleName = (e) =>{
+        this.setState({
+            title:e.target.value
+        });
+    };
+    handleDeadline = (e) =>{
+        this.setState({
+            deadline:e.target.value
+        });
+    }
+
+    createCard = (e) => {
+        e.preventDefault();
+        this.props.onCreateCard(this.state.title, this.state.deadline, this.props.gatherId);
+    }
+
     render() {
 
         return(
@@ -29,12 +58,12 @@ class CardModal extends Component{
                 <form>
 
                     <label for="cardName" >Card name</label>
-                    <input type="text" id="cardName" class="form-control" placeholder="Card name" required="" autofocus=""/>
+                    <input type="text" id="cardName" class="form-control" placeholder="Card name" required="" autofocus="" onChange={this.handleName}/>
 
                     <label for="deadline" >Deadline</label>
-                    <input type="text" id="deadline" class="form-control" placeholder="Deadline" required=""/>
+                    <input type="text" id="deadline" class="form-control" placeholder="Deadline" required="" onChange={this.handleDeadline}/>
 
-                    <button onClick={this.props.onCloseClicked}>Create</button>
+                    <button onClick={this.createCard}>Create</button>
                     <button onClick={this.props.onCloseClicked}>Close</button>
                 </form>
             </Modal>

@@ -9,7 +9,7 @@ class CardGather extends React.Component {
             <div className="card-gather container">
                 <h1>{this.props.title}</h1>
                 <hr />
-                <CardContainer cards={this.props.cards} />
+                <CardContainer cards={this.props.cards} gatherId={this.props.id} onCreateCard={this.props.onCreateCard} />
             </div>
         )
     }

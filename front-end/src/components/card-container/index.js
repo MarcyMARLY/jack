@@ -5,6 +5,7 @@ import CardView from "../card/card-view/CardView";
 
 class CardContainer extends React.Component {
 
+
     render() {
         const cards = this.props.cards.map((card) => (
                 <CardView
@@ -15,7 +16,7 @@ class CardContainer extends React.Component {
         return (
             <div className="card-container">
                 { cards }
-                <CardMaker />
+                <CardMaker gatherId={this.props.gatherId} onCreateCard={this.props.onCreateCard}/>
             </div>
         )
     }

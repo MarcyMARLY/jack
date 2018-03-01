@@ -20,7 +20,8 @@ class GatherModal extends React.Component {
         super(props);
 
         this.state = {
-            title: ""
+            title: "",
+            cards: []
         }
     }
 
@@ -37,10 +38,12 @@ class GatherModal extends React.Component {
 
     onCreateButtonClick = () => {
         let createdGather = {
-            "title": this.state.title
+            "title": this.state.title,
+            "cards": []
         };
         this.setState({
             title: ""
+
         });
         this.props.onGatherCreateModalSubmit(createdGather);
         this.props.onModalClose();

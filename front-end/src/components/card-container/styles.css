@@ -4,4 +4,6 @@
     background-color: cyan;
     padding: 5px;
     margin: 10px 0;
+    align-items: center;
+    justify-content: center;
 }

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './styles.css';
 
 class CardView extends Component{
-  state = {};
   render(){
     return(
       <div class="card-jack" >
@@ -22,11 +21,11 @@ class CardView extends Component{
 
         </div>
         <div class="card-body">
-          <div class = "card-body-name">
-            <label>Card</label>
+          <div class="card-body-name">
+            <label>{this.props.title}</label>
           </div>
-          <div class = "card-body-info">
-          <label>Due: 12.12.12</label>
+          <div class="card-body-info">
+          <label>{this.props.dueDate}</label>
 
           </div>
         </div>

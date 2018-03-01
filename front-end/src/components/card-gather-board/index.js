@@ -11,7 +11,25 @@ class CardsBoard extends React.Component {
         this.state = {
             gathers: [
                 {
-                    title: "First Gather"
+                    id: 1,
+                    title: "First Gather",
+                    cards: [
+                        {
+                            id: "1",
+                            title: "Coffee",
+                            dueDate: "12.12.12"
+                        },
+                        {
+                            id: "2",
+                            title: "Gym",
+                            dueDate: "12.12.14"
+                        },
+                        {
+                            id: "3",
+                            title: "Салон",
+                            dueDate: "12.12.14"
+                        }
+                    ]
                 }
             ]
         }

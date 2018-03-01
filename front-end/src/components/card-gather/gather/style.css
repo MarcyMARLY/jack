@@ -1,6 +1,8 @@
 .card-gather {
-    height: 250px;
     background-color: yellow;
+    margin: 10px 0;
+    min-height: 250px;
+    padding: 10px;
 }
 
 hr {

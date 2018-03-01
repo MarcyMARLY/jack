@@ -8,7 +8,8 @@ class GatherList extends React.Component {
             <CardGather
                 key={gather.id}
                 id={gather.id}
-                title={gather.title} />
+                title={gather.title}
+                cards={gather.cards} />
             )
         );
 

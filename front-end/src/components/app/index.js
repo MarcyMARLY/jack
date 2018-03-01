@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles.css';
 import Header from '../header/index'
-import Registration from '../Registration/RegistrationModal'
+import Registration from '../registration/RegistrationModal'
 import Login from '../Login/LoginModal'
 
 class App extends Component {

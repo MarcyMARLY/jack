@@ -1,7 +1,7 @@
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 import './styles.css'
-import Registration from '../Registration/RegistrationModal'
+import Registration from '../registration/RegistrationModal'
 import Login from '../Login/LoginModal'
 
 class Header extends React.Component {

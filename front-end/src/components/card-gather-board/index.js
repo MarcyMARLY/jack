@@ -17,6 +17,7 @@ class CardsBoard extends React.Component {
         }
     }
 
+
     handleGatherCreation = (gatherObject) => {
         let gatherListCopy = this.state.gathers.slice();
         gatherListCopy.push(gatherObject);

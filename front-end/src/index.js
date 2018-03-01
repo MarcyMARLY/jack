@@ -9,6 +9,7 @@ import OrganizationTemplate from './components/organization/organizationTemplate
 import OrganizationEditModal from './components/organization/organizationEditModal'
 import BrowserRouter from "react-router-dom/es/BrowserRouter";
 import Landing from "./components/landing";
+import CardModal from './components/card/card-modal/index'
 
 ReactDOM.render(
     <BrowserRouter>

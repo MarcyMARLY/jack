@@ -16,9 +16,37 @@ const customStyles = {
 
 class GatherModal extends React.Component {
 
-    render() {
+    constructor(props) {
+        super(props);
 
-        if (!this.props.show) return null;
+        this.state = {
+            title: ""
+        }
+    }
+
+    onTitleChange = (event) => {
+        let changedTitle = event.target.value;
+        this.setState({
+            title: changedTitle
+        });
+    };
+
+    onCloseButtonClick = () => {
+        this.props.onModalClose();
+    };
+
+    onCreateButtonClick = () => {
+        let createdGather = {
+            "title": this.state.title
+        };
+        this.setState({
+            title: ""
+        });
+        this.props.onGatherCreateModalSubmit(createdGather);
+        this.props.onModalClose();
+    };
+
+    render() {
 
         return (
             <Modal
@@ -27,9 +55,11 @@ class GatherModal extends React.Component {
                 contentLabel="Gather Card creator">
 
                 <h2>Create Gather</h2>
-                <div>Will be beautified soon</div>
+                <div>Title</div>
                 <form>
-                    <input />
+                    <input value={this.state.title} onChange={this.onTitleChange}/>
+                    <button onClick={this.onCreateButtonClick}>Create</button>
+                    <button onClick={this.onCloseButtonClick}>Close</button>
                 </form>
             </Modal>
         );

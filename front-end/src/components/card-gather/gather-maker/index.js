@@ -11,22 +11,28 @@ class GatherMaker extends React.Component {
         }
     }
 
-    toggleModal = () => {
+    handleModalClose = () => {
         this.setState({
-            isOpen: !this.state.isOpen
+            isOpen: false
+        });
+    };
+
+    handleModalOpen = () => {
+        this.setState({
+            isOpen: true
         });
     };
 
     render() {
         return (
             <div className="App">
-                <button onClick={this.toggleModal}>
+                <button onClick={this.handleModalOpen}>
                     Open the modal
                 </button>
 
                 <GatherModal show={this.state.isOpen}
-                       onClose={this.toggleModal}>
-                    `Here's some content for the modal`
+                             onModalClose={this.handleModalClose}
+                             onGatherCreateModalSubmit={this.props.onGatherCreateModalSubmit}>
                 </GatherModal>
             </div>
         );

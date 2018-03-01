@@ -1,10 +1,16 @@
-import Component from 'react'
+import React from 'react'
+import './style.css'
+import CardContainer from "../../card-container";
 
-class CardGather extends Component {
+class CardGather extends React.Component {
 
     render() {
         return (
-            <h1>Laaaaalka</h1>
+            <div className="card-gather container">
+                <h1>{this.props.title}</h1>
+                <hr />
+                <CardContainer cardList={this.props.cards} />
+            </div>
         )
     }
 }

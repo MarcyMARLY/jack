@@ -13,23 +13,14 @@ class Header extends React.Component {
           <div class = "main">
             <div className="navigation-container">
                 <nav className="navbar navbar-expand-lg navigation-container">
-                                    <h3 class="masthead-brand-jack">JACK</h3>
-                    <div className="collapse navbar-collapse justify-content-end navigation-container" id="navbarNav">
+                     <div className="collapse navbar-collapse justify-content-end navigation-container" id="navbarNav">
 
                         <ul className="navbar-nav">
                             <li className="nav-item">
-
-                                <Link className ="nav-link" to="/organization">Organization</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className ="nav-link" to="/board">Board</Link>
-                            </li>
-
-                            <li className="nav-item" onClick = {this.props.onRegistrationOpen}>
-                                <a className="nav-link btn-like" href="#">Registration</a>
+                                <Link className ="nav-link" to="/home">Home</Link>
                             </li>
                             <li className="nav-item" onClick = {this.props.onLoginOpen}>
-                                <a className="nav-link btn-like" href="#">Login</a>
+                                <a className="nav-link" href="#">Login</a>
                             </li>
                         </ul>
                     </div>

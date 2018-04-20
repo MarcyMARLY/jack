@@ -4,29 +4,27 @@ import './styles.css';
 class Footer extends Component{
   render(){
     return(
-      <footer class = 'jack-footer'>
-        <div class = 'jack-footer-body'>
-          <div class = 'float-left' >
-            <div >
-              <label class = 'float-left-element'>Contact:</label>
-              <label class = 'float-left-element'>contact dsh</label>
-            </div>
-            <div>
-              <label class = 'float-left-element'>Contact:</label>
-              <label class = 'float-left-element'>contact dsh</label>
-            </div>
-
-
+      <footer class="pt-4 my-md-3 pt-md-3 ">
+        <div class="row">
+          <div class="col-12 col-md">
+            <small class="d-block mb-3 text-muted">© 2017-2018</small>
           </div>
-        </div>
-        <div>
-        <div class = 'jack-footer-body'>
-          <label class = 'float-left-element'>Android:</label>
-          <label class = 'float-left-element'>'some link'</label>
-        </div>
-        </div>
-        <div class = 'jack-footer-body'>
-            <p>© Jack 2018</p>
+
+          <div class="col-6 col-md">
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Android app</a></li>
+              <li><a class="text-muted" href="#">IOS app</a></li>
+
+            </ul>
+          </div>
+          <div class="col-6 col-md">
+            <ul class="list-unstyled text-small">
+              <li><a class="text-muted" href="#">Team</a></li>
+              <li><a class="text-muted" href="#">Locations</a></li>
+              <li><a class="text-muted" href="#">Privacy</a></li>
+              <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+          </div>
         </div>
       </footer>
     );

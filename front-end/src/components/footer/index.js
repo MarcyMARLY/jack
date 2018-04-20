@@ -1,33 +1,30 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './styles.css';
 
-class Footer extends Component{
-  render(){
-    return(
-      <footer class="pt-4 my-md-3 pt-md-3 ">
-        <div class="row">
-          <div class="col-12 col-md">
-            <small class="d-block mb-3 text-muted">© 2017-2018</small>
-          </div>
-
-          <div class="col-6 col-md">
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Android app</a></li>
-              <li><a class="text-muted" href="#">IOS app</a></li>
-
-            </ul>
-          </div>
-          <div class="col-6 col-md">
-            <ul class="list-unstyled text-small">
-              <li><a class="text-muted" href="#">Team</a></li>
-              <li><a class="text-muted" href="#">Locations</a></li>
-              <li><a class="text-muted" href="#">Privacy</a></li>
-              <li><a class="text-muted" href="#">Terms</a></li>
-            </ul>
-          </div>
-        </div>
-      </footer>
-    );
-  }
+class Footer extends Component {
+    render() {
+        return (
+            <footer className="pt-3 my-md-3 pt-md-3">
+                <div className="row" style={{'margin': 0}}>
+                    <div className="col-3 col-md">
+                        <ul className="list-unstyled text-small">
+                            <li><a className="text-muted" href="#">Android app</a></li>
+                            <li><a className="text-muted" href="#">IOS app</a></li>
+                        </ul>
+                    </div>
+                    <div className="col-3 col-md">
+                        <ul className="list-unstyled text-small">
+                            <li><a className="text-muted" href="#">Team</a></li>
+                            <li><a className="text-muted" href="#">Locations</a></li>
+                            <li><a className="text-muted" href="#">Privacy</a></li>
+                            <li><a className="text-muted" href="#">Terms</a></li>
+                        </ul>
+                    </div>
+                </div>
+                © 2017-2018
+            </footer>
+        );
+    }
 }
+
 export default Footer;

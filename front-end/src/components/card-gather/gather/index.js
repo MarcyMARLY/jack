@@ -2,11 +2,18 @@ import React from 'react'
 import './style.css'
 import CardContainer from "../../card-container";
 import {MdDeleteForever} from "react-icons/lib/md/index";
+import axios from 'axios';
 
 class CardGather extends React.Component {
 
-    deleteGather = () => {
-        console.log(this.props.id)
+    deleteGather = async () => {
+      console.log(this.props.id)
+      await axios.delete(`http://127.0.0.1:3001/api/organizations/1/gathers/${this.props.id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
+
     };
 
     render() {

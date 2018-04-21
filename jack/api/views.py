@@ -61,7 +61,7 @@ def gathers(request, or_id):
 @csrf_exempt
 def gather_detail(request, or_id, g_id):
     try:
-        gathers = Organization.objects.get(pk=or_id).gather_set.get(pk=or_id)
+        gathers = Organization.objects.get(pk=or_id).gather_set.get(pk=g_id)
     except Exception as e:
         return JsonResponse({"error": str(e)}, status=404)
     if request.method == "GET":

@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Jua');
+
+
 .card-gather {
-    background-color: yellow;
+    background-color: #bdbdbd;
     margin: 10px 0;
     min-height: 250px;
     padding: 10px;
+    font-family: 'Jua', sans-serif;
+    border-radius: 3px;
+}
+
+.gather-header {
+    text-align: left;
+    margin-left: 5px;
 }
 
 hr {

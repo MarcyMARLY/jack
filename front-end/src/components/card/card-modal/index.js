@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './styles.css';
 import Modal from 'react-modal';
 
@@ -24,9 +24,6 @@ class CardModal extends Component {
             title:'',
             deadline:''
         }
-
-
-
     }
 
     handleName = (e) =>{
@@ -34,16 +31,17 @@ class CardModal extends Component {
             title:e.target.value
         });
     };
+
     handleDeadline = (e) =>{
         this.setState({
             deadline:e.target.value
         });
-    }
+    };
 
     createCard = (e) => {
         e.preventDefault();
         this.props.onCreateCard(this.state.title, this.state.deadline, this.props.gatherId);
-    }
+    };
 
     render() {
 

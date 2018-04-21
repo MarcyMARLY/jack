@@ -38,7 +38,7 @@ class CardsBoard extends React.Component {
     createCard = (e, t, gatherId) => {
         let gather = this.state.gathers.slice();
 
-        gather.filter(gather => gather.id == gatherId)[0].cards.push({
+        gather.filter(gather => gather.id === gatherId)[0].cards.push({
             title: e,
             dueDate: t,
         });
@@ -46,7 +46,6 @@ class CardsBoard extends React.Component {
         this.setState({
             gathers: gather
         });
-        console.log("Card created" + e + t);
     };
 
     handleGatherCreation = (gatherObject) => {

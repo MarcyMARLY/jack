@@ -1,5 +1,6 @@
 import React from 'react'
 import GatherModal from "../gather-modal";
+import './styles.css'
 
 class GatherMaker extends React.Component {
 
@@ -25,7 +26,7 @@ class GatherMaker extends React.Component {
 
     render() {
         return (
-            <div className="App">
+            <div className="gather-maker container">
                 <button onClick={this.handleModalOpen}>
                     Open the modal
                 </button>

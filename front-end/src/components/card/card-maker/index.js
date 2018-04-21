@@ -1,36 +1,40 @@
 import React from 'react'
 import './styles.css'
 import CardModal from '../card-modal/index'
+import FaPlusSquareO from "react-icons/lib/fa/plus-square-o";
 
 class CardMaker extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            isCreateCard:false
+            isCreateCard: false
         }
     }
 
-    handleCardModalOpen =() => {
+    handleCardModalOpen = () => {
         this.setState({
-            isCreateCard:true
+            isCreateCard: true
         });
     };
 
-    handleCardModalClose =() => {
+    handleCardModalClose = () => {
         this.setState({
-            isCreateCard:false
+            isCreateCard: false
         });
     };
 
     render() {
 
-            return (
-                <div className="card-maker">
-                    <button onClick={this.handleCardModalOpen}>Create</button>
-                    <CardModal gatherId={this.props.gatherId} isCreateCard = {this.state.isCreateCard} onCloseClicked = {this.handleCardModalClose} onCreateCard = {this.props.onCreateCard}/>
-                </div>
-            );
+        return (
+            <div>
+                <button onClick={this.handleCardModalOpen} className="card-maker">
+                    <span><FaPlusSquareO size={60}/></span>
+                </button>
+                <CardModal gatherId={this.props.gatherId} isCreateCard={this.state.isCreateCard}
+                           onCloseClicked={this.handleCardModalClose} onCreateCard={this.props.onCreateCard}/>
+            </div>
+        );
     }
 }
 

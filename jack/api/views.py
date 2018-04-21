@@ -75,7 +75,7 @@ def gather_detail(request, or_id, g_id):
             return JsonResponse(ser.data)
     elif request.method == "DELETE":
         gathers.delete()
-        ser = OrganizationSerializer(gathers)
+        ser = GatherSerializer(gathers)
         return JsonResponse(ser.data)
 
 @csrf_exempt
@@ -91,6 +91,23 @@ def cards(request,or_id, g_id):
             ser.save()
             return JsonResponse(ser.data,status=201)
         return JsonResponse(ser.errors, status=400)
-#
-# @csrf_exempt
-# def card_detail(request, or_id, g_id, c_id):
+
+@csrf_exempt
+def card_detail(request, or_id, g_id, c_id):
+    try:
+        cards = Organization.objects.get(pk=or_id).gather_set.get(pk=or_id).card_set.get(pk=c_id)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=404)
+    if request.method == "GET":
+        ser = CardSerializer(cards)
+        return JsonResponse(ser.data)
+    elif request.method == "PUT":
+        data = JSONParser().parse(request)
+        ser = CardSerializer(cards, data)
+        if(ser.is_valid()):
+            ser.save()
+            return JsonResponse(ser.data)
+    elif request.method == "DELETE":
+        cards.delete()
+        ser = CardSerializer(cards)
+        return JsonResponse(ser.data)

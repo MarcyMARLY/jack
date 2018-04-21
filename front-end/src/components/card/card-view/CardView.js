@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import './styles.css';
 import {MdDeleteForever} from "react-icons/lib/md/index";
+import axios from 'axios';
 
 class CardView extends Component {
 
-    deleteCard = () => {
+    deleteCard = async () => {
+      await axios.delete(`http://127.0.0.1:3001/api/organizations/1/gathers/1/cards/${this.props.id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      })
         console.log(this.props.id)
     };
 

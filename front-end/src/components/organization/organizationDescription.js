@@ -10,13 +10,12 @@ class organizationDescription extends Component{
           name:'Organization',
           description:'Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.',
           address:'Seifullin 535 ',
-          phone:'34-556-78',
+
           isEdit:false
         };
     }
   componentDidMount() {
     axios.get('http://127.0.0.1:3001/api/organizations/').then(res =>{
-
       this.setState({
         name: res.data[0].name,
         description: res.data[0].description,
@@ -28,11 +27,20 @@ class organizationDescription extends Component{
     this.setState({
       isEdit:true
     });
+
   };
   handleEditClose = () => {
+    axios.get('http://127.0.0.1:3001/api/organizations/').then(res =>{
+      this.setState({
+        name: res.data[0].name,
+        description: res.data[0].description,
+        address:res.data[0].address,
+      });
+    })
     this.setState({
       isEdit:false
     });
+
   };
 
   render(){
@@ -43,7 +51,6 @@ class organizationDescription extends Component{
               name = {this.state.name}
               description = {this.state.description}
               address = {this.state.address}
-              phone = {this.state.phone}
               />
           <section class="jumbotron text-center">
             <div class="container">
@@ -55,10 +62,7 @@ class organizationDescription extends Component{
                 <label> Address:</label>
                 <p class="lead">{this.state.address}</p>
               </div>
-              <div class = "description-component">
-                <label> Telephone:</label>
-                <p class="lead">{this.state.phone}</p>
-              </div>
+
               </p>
               <button class="btn btn-sm btn-primary btn-block " onClick={this.handleEditOpen} type="submit">Edit</button>
             </div>
@@ -78,10 +82,7 @@ class organizationDescription extends Component{
               <label> Address:</label>
               <p class="lead">{this.state.address}</p>
             </div>
-            <div class = "description-component">
-              <label> Telephone:</label>
-              <p class="lead">34-556-78</p>
-            </div>
+
             </p>
             <button class="btn btn-sm btn-primary btn-block " onClick={this.handleEditOpen} type="submit">Edit</button>
           </div>

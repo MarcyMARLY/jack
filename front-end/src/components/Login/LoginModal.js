@@ -21,7 +21,7 @@ class LoginModal extends Component{
                 <label for="inputPassword" class="sr-only">Password</label>
                 <input type="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
 
-                <button class="btn  btn-primary btn-block" type="submit">Register</button>
+                <button class="btn  btn-primary btn-block" type="submit">Login</button>
               </form>
             </div>
           </div>

@@ -47,11 +47,16 @@ class Landing extends Component {
 
     handleLogId = (id) => {
       console.log(id);
-      this.props.echoo()
       this.props.userLoged(id)
     }
 
+    updateSelf = () => {
+      console.log('puda')
+      this.forceUpdate();
+    }
+
     render() {
+      let id = sessionStorage.getItem("organizationId")
         let html =
             <div class="inner cover">
                 <div class='jackTitle'>
@@ -122,14 +127,15 @@ class Landing extends Component {
         if (this.state.isLogin) {
             return (
                 <div class="base-jack">
-                    <Login userLoged={this.handleLogId} onLoginClose={this.handleLoginClose}/>
+                    <Login userLoged={this.handleLogId} onLoginClose={this.handleLoginClose} update={this.updateSelf}/>
                     <div class="main">
                         <div class="site-wrapper">
                             <div class="site-wrapper-inner">
                                 <div class="masthead clearfix">
 
                                   <Header onRegistrationOpen={this.handleRegistrationOpen}
-                                          onLoginOpen={this.handleLoginOpen}/> :
+                                          onLoginOpen={this.handleLoginOpen}
+                                          update={this.updateSelf}/> :
 
 
                                 </div>
@@ -148,12 +154,13 @@ class Landing extends Component {
                         <div class="site-wrapper">
                             <div class="site-wrapper-inner">
                                 <div class="masthead clearfix">
-                                {this.props.organizationId === -1 ?
+                                {id == null ?
                                   <Header onRegistrationOpen={this.handleRegistrationOpen}
                                           onLoginOpen={this.handleLoginOpen}/> :
                                     <OHeader onRegistrationOpen={this.handleRegistrationOpen}
                                             onLoginOpen={this.handleLoginOpen}
-                                            userLoged={this.props.userLoged}/>
+                                            userLoged={this.props.userLoged}
+                                            update={this.updateSelf}/>
                                   }
                                 </div>
                                 {html}
@@ -169,12 +176,13 @@ class Landing extends Component {
                     <div class="site-wrapper">
                         <div class="site-wrapper-inner">
                             <div class="masthead clearfix">
-                            {this.props.organizationId === -1 ?
+                            {id == null ?
                               <Header onRegistrationOpen={this.handleRegistrationOpen}
                                       onLoginOpen={this.handleLoginOpen}/> :
                                 <OHeader onRegistrationOpen={this.handleRegistrationOpen}
                                         onLoginOpen={this.handleLoginOpen}
-                                        userLoged={this.props.userLoged}/>
+                                        userLoged={this.props.userLoged}
+                                        update={this.updateSelf}/>
                               }
 
 

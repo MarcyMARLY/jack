@@ -37,7 +37,8 @@ class CardsBoard extends React.Component {
     }
     componentDidMount = async () => {
       let gathers = []
-      await axios.get(`http://127.0.0.1:3001/api/organizations/1/gathers/`).then(res =>{
+      let id = sessionStorage.getItem("organizationId")
+      await axios.get(`http://127.0.0.1:3001/api/organizations/${id}/gathers/`).then(res =>{
           gathers = res.data
         console.log(gathers);
       })
@@ -45,7 +46,7 @@ class CardsBoard extends React.Component {
       for(var i=0;i<gathers.length;i++) {
         console.log(gathers[i].id)
         gathers[i]['cards'] = []
-        await axios.get(`http://127.0.0.1:3001/api/organizations/1/gathers/` + gathers[i].id + '/cards').then(res =>{
+        await axios.get(`http://127.0.0.1:3001/api/organizations/${id}/gathers/` + gathers[i].id + '/cards').then(res =>{
           gathers[i].cards = res.data
           console.log(res.data);
         })
@@ -58,7 +59,8 @@ class CardsBoard extends React.Component {
     }
 
     createCard = (e, t, d, gatherId) => {
-        axios.post('http://127.0.0.1:3001/api/organizations/1/gathers/'+gatherId+'/cards',{title:e, card_image:"https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg",created_at:t,deactivate_at: t,
+        let id = sessionStorage.getItem("organizationId")
+        axios.post(`http://127.0.0.1:3001/api/organizations/${id}/gathers/`+gatherId+'/cards',{title:e, card_image:"https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg",created_at:t,deactivate_at: t,
         description: d, gather:gatherId
         })
         .then(res => {
@@ -77,7 +79,8 @@ class CardsBoard extends React.Component {
     };
 
     handleGatherCreation = (gatherObject) => {
-        axios.post('http://127.0.0.1:3001/api/organizations/1/gathers/',{id:gatherObject.id, title:gatherObject.title, organization:1
+        let id = sessionStorage.getItem("organizationId")
+        axios.post(`http://127.0.0.1:3001/api/organizations/${id}/gathers/`,{id:gatherObject.id, title:gatherObject.title, organization:1
         })
         .then(res => {
         });

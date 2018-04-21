@@ -4,10 +4,17 @@ import '../header/styles.css'
 import { Link } from 'react-router-dom';
 
 class OHeader extends React.Component {
+  constructor(props) {
+    super(props)
 
+    this.state = {
+      logedIn: false
+    }
+  }
 
   logout = () => {
-    this.props.userLoged(-1)
+    sessionStorage.clear()
+    this.props.update()
   }
 
     render () {
@@ -29,7 +36,9 @@ class OHeader extends React.Component {
                             <Link className ="nav-link" to="/board">Board</Link>
                         </li>
 
-                      
+                        <li className="nav-item" onClick = {this.logout}>
+                            <a className="nav-link">Log out</a>
+                        </li>
                     </ul>
                     </div>
                 </nav>

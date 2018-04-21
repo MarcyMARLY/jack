@@ -8,7 +8,8 @@ class CardGather extends React.Component {
 
     deleteGather = async () => {
       console.log(this.props.id)
-      await axios.delete(`http://127.0.0.1:3001/api/organizations/1/gathers/${this.props.id}`)
+      let id = sessionStorage.getItem("organizationId")
+      await axios.delete(`http://127.0.0.1:3001/api/organizations/${id}/gathers/${this.props.id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);

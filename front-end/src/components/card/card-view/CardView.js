@@ -6,7 +6,8 @@ import axios from 'axios';
 class CardView extends Component {
 
     deleteCard = async () => {
-      await axios.delete(`http://127.0.0.1:3001/api/organizations/1/gathers/1/cards/${this.props.id}`)
+      let id = sessionStorage.getItem("organizationId")
+      await axios.delete(`http://127.0.0.1:3001/api/organizations/1/gathers/1/cards/${id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);

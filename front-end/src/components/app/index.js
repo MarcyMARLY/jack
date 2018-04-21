@@ -21,18 +21,14 @@ class App extends Component {
     this.setState({
       organizationId: id
     })
-    console.log('asd')
-  }
-
-  echoo = () => {
-    console.log('asdsa');
+    sessionStorage.setItem('organizationId', id)
   }
 
     render() {
         return (
             <div>
               <Switch>
-                <Route exact path="/" component={() => <Landing echoo={this.echoo} userLoged={this.userLogedIn} organizationId={this.state.organizationId} />} />
+                <Route exact path="/" component={() => <Landing userLoged={this.userLogedIn} organizationId={this.state.organizationId} />} />
                 <Route path="/board" component={() => <CardsBoard organizationId={this.state.organizationId} /> } />
                 <Route path="/organization" component={ () => <OrganizationTemplate organizationId={this.state.organizationId} /> } />
                 <Route path="/home" component={Home} />

@@ -34,6 +34,7 @@ class LoginModal extends Component{
       if (res.status === 200) {
         console.log('uid' + res.data.userId)
         this.props.userLoged(res.data.userId)
+        this.props.update()
       } else {
         alert("User not found")
       }

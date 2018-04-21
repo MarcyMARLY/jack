@@ -3,7 +3,6 @@ import '../landing/styles.css';
 import Header from '../header/index'
 import Registration from '../registration/RegistrationModal'
 import Login from '../Login/LoginModal'
-
 import Footer from '../footer/index'
 
 class Landing extends Component {
@@ -52,6 +51,7 @@ class Landing extends Component {
                     <p class='leadJ'>All your gift cards in one place</p>
                 </div>
                 <div class="organization-body">
+                    <h1>Our customers</h1>
                     <div class="row">
                         <div class="col-lg-4">
                             <img class="rounded-circle"

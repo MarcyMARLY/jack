@@ -1,5 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Bitter');
+
 .App {
   text-align: center;
+}
+
+h1, h2, p {
+  font-family: 'Bitter', serif;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
 
 .App-logo {

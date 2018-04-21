@@ -25,12 +25,11 @@ class CardMaker extends React.Component {
     };
 
     render() {
-
         return (
             <div>
-                <button onClick={this.handleCardModalOpen} className="card-maker">
+                <div onClick={this.handleCardModalOpen} className="card-maker">
                     <span><FaPlusSquareO size={60}/></span>
-                </button>
+                </div>
                 <CardModal gatherId={this.props.gatherId} isCreateCard={this.state.isCreateCard}
                            onCloseClicked={this.handleCardModalClose} onCreateCard={this.props.onCreateCard}/>
             </div>

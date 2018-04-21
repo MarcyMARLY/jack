@@ -57,9 +57,10 @@ class GatherModal extends React.Component {
                 style={customStyles}
                 contentLabel="Gather Card creator">
 
-                <h2>Create Gather</h2>
+                <h2>New card collection</h2>
                 <div>Title</div>
                 <form>
+
                     <input value={this.state.title} onChange={this.onTitleChange}/>
                     <button onClick={this.onCreateButtonClick}>Create</button>
                     <button onClick={this.onCloseButtonClick}>Close</button>

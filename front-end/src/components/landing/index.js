@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../landing/styles.css';
 import Header from '../header/index'
+import OHeader from '../organization/organzationHeader'
 import Registration from '../registration/RegistrationModal'
 import Login from '../Login/LoginModal'
 import Footer from '../footer/index'
@@ -13,6 +14,7 @@ class Landing extends Component {
             isRegistration: false,
             isLogin: false
         };
+        console.log(this.props.organizationId)
     }
 
     handleRegistrationOpen = () => {
@@ -42,6 +44,12 @@ class Landing extends Component {
             isLogin: false
         });
     };
+
+    handleLogId = (id) => {
+      console.log(id);
+      this.props.echoo()
+      this.props.userLoged(id)
+    }
 
     render() {
         let html =
@@ -114,12 +122,16 @@ class Landing extends Component {
         if (this.state.isLogin) {
             return (
                 <div class="base-jack">
-                    <Login userLoged={this.props.userLoged} onLoginClose={this.handleLoginClose}/>
+                    <Login userLoged={this.handleLogId} onLoginClose={this.handleLoginClose}/>
                     <div class="main">
                         <div class="site-wrapper">
                             <div class="site-wrapper-inner">
                                 <div class="masthead clearfix">
-                                    <Header onRegistrationOpen={this.handleRegistrationOpen}/>
+
+                                  <Header onRegistrationOpen={this.handleRegistrationOpen}
+                                          onLoginOpen={this.handleLoginOpen}/> :
+
+
                                 </div>
                                 {html}
                                 <Footer/>
@@ -136,7 +148,13 @@ class Landing extends Component {
                         <div class="site-wrapper">
                             <div class="site-wrapper-inner">
                                 <div class="masthead clearfix">
-                                    <Header onRegistrationOpen={this.handleRegistrationOpen}/>
+                                {this.props.organizationId === -1 ?
+                                  <Header onRegistrationOpen={this.handleRegistrationOpen}
+                                          onLoginOpen={this.handleLoginOpen}/> :
+                                    <OHeader onRegistrationOpen={this.handleRegistrationOpen}
+                                            onLoginOpen={this.handleLoginOpen}
+                                            userLoged={this.props.userLoged}/>
+                                  }
                                 </div>
                                 {html}
                                 <Footer/>
@@ -151,9 +169,15 @@ class Landing extends Component {
                     <div class="site-wrapper">
                         <div class="site-wrapper-inner">
                             <div class="masthead clearfix">
+                            {this.props.organizationId === -1 ?
+                              <Header onRegistrationOpen={this.handleRegistrationOpen}
+                                      onLoginOpen={this.handleLoginOpen}/> :
+                                <OHeader onRegistrationOpen={this.handleRegistrationOpen}
+                                        onLoginOpen={this.handleLoginOpen}
+                                        userLoged={this.props.userLoged}/>
+                              }
 
-                                <Header onRegistrationOpen={this.handleRegistrationOpen}
-                                        onLoginOpen={this.handleLoginOpen}/>
+
                             </div>
                             {html}
                         </div>

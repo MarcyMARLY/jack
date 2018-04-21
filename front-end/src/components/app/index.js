@@ -17,17 +17,22 @@ class App extends Component {
     }
   }
 
-  userLoged = (uid) => {
+  userLogedIn = (id) => {
     this.setState({
-      organizationId: uid
+      organizationId: id
     })
+    console.log('asd')
+  }
+
+  echoo = () => {
+    console.log('asdsa');
   }
 
     render() {
         return (
             <div>
               <Switch>
-                <Route exact path="/" component={() => <Landing userLoged={this.userLoged} />} />
+                <Route exact path="/" component={() => <Landing echoo={this.echoo} userLoged={this.userLogedIn} organizationId={this.state.organizationId} />} />
                 <Route path="/board" component={() => <CardsBoard organizationId={this.state.organizationId} /> } />
                 <Route path="/organization" component={ () => <OrganizationTemplate organizationId={this.state.organizationId} /> } />
                 <Route path="/home" component={Home} />

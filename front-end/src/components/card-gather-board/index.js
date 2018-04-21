@@ -1,7 +1,7 @@
 import React from 'react'
 import GatherList from "../card-gather/gather-list";
 import GatherMaker from "../card-gather/gather-maker";
-import Header from "../header";
+import Header from "../organization/organzationHeader";
 import axios from 'axios';
 
 class CardsBoard extends React.Component {
@@ -37,7 +37,7 @@ class CardsBoard extends React.Component {
     }
     componentDidMount = async () => {
       let gathers = []
-      await axios.get('http://127.0.0.1:3001/api/organizations/1/gathers/').then(res =>{
+      await axios.get(`http://127.0.0.1:3001/api/organizations/1/gathers/`).then(res =>{
           gathers = res.data
         console.log(gathers);
       })
@@ -45,7 +45,7 @@ class CardsBoard extends React.Component {
       for(var i=0;i<gathers.length;i++) {
         console.log(gathers[i].id)
         gathers[i]['cards'] = []
-        await axios.get('http://127.0.0.1:3001/api/organizations/1/gathers/' + gathers[i].id + '/cards').then(res =>{
+        await axios.get(`http://127.0.0.1:3001/api/organizations/1/gathers/` + gathers[i].id + '/cards').then(res =>{
           gathers[i].cards = res.data
           console.log(res.data);
         })

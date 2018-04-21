@@ -19,20 +19,20 @@ class LoginModal extends Component{
 
     this.props.onLoginClose;
     this.setState({
-        isRegistration: true,
-        isLogin: false
+        isRegistration: false,
+        isLogin: true
     });
 
 
   }
 
-  onLogin = (event) =>{
+  onLogin = (event) => {
     event.preventDefault()
     axios.post('http://127.0.0.1:3001/api/users/checks/',{username: this.state.username,
       password: this.state.password})
     .then(res => {
       if (res.status === 200) {
-        console.log(res.data.userId)
+        console.log('uid' + res.data.userId)
         this.props.userLoged(res.data.userId)
       } else {
         alert("User not found")
@@ -85,10 +85,10 @@ class LoginModal extends Component{
             <div class="modal-body">
               <form class="form-signin" onChange={this.handleChange}>
 
-                <label for="inputEmail" class="sr-only">Username</label>
-                <input type="text" name ="username" class = "mb-3" id="inputEmail" class="form-control" placeholder="Username" required="" autofocus=""/>
+                <label htmlFor="inputEmail" class="sr-only">Username</label>
+                <input type="text" name ="username" class = "mb-3" id="inputEmail" class="form-control" placeholder="Username" required="" />
 
-                <label for="inputPassword" class="sr-only">Password</label>
+                <label htmlFor="inputPassword" class="sr-only">Password</label>
                 <input type="password" name ="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
 
                 <button class="btn  btn-primary btn-block" type="submit" onClick ={this.onLogin}>Login</button>

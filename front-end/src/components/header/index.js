@@ -20,7 +20,7 @@ class Header extends React.Component {
                                 <Link className ="nav-link" to="/home">Home</Link>
                             </li>
                             <li className="nav-item" onClick = {this.props.onLoginOpen}>
-                                <a className="nav-link" href="#">Login</a>
+                                <a className="nav-link">Login</a>
                             </li>
                         </ul>
                     </div>

@@ -3,9 +3,12 @@ import 'bootstrap/dist/css/bootstrap.css'
 import '../header/styles.css'
 import { Link } from 'react-router-dom';
 
-class Header extends React.Component {
+class OHeader extends React.Component {
 
 
+  logout = () => {
+    this.props.userLoged(-1)
+  }
 
     render () {
         return (
@@ -26,9 +29,7 @@ class Header extends React.Component {
                             <Link className ="nav-link" to="/board">Board</Link>
                         </li>
 
-                        <li className="nav-item" onClick = {this.props.onLoginOpen}>
-                            <a className="nav-link" href="#">Log out</a>
-                        </li>
+                      
                     </ul>
                     </div>
                 </nav>
@@ -38,4 +39,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header
+export default OHeader

@@ -54,7 +54,6 @@ class organizationDescription extends Component{
               />
           <section class="jumbotron text-center">
             <div class="container">
-            <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"/>
               <h1 class="jumbotron-heading">{this.state.name}</h1>
               <p class="lead text-muted">{this.state.description}</p>
               <p>
@@ -74,7 +73,6 @@ class organizationDescription extends Component{
       return(
         <section class="jumbotron text-center">
           <div class="container">
-          <img class="rounded-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140"/>
             <h1 class="jumbotron-heading">{this.state.name}</h1>
             <p class="lead text-muted">{this.state.description}</p>
             <p>

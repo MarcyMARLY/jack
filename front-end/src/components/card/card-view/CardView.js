@@ -24,7 +24,7 @@ class CardView extends Component {
                         <label>{this.props.title}</label>
                     </div>
                     <div class="card-body-info">
-                        <label>{this.props.dueDate}</label>
+                        <label>{this.props.deactivate_at}</label>
 
                     </div>
                 </div>

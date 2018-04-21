@@ -10,7 +10,7 @@ class CardContainer extends React.Component {
         const cards = this.props.cards.map((card) => (
                 <CardView
                     title={card.title}
-                    dueDate={card.dueDate} />
+                    deactivate_at={card.deactivate_at} />
             )
         );
         return (

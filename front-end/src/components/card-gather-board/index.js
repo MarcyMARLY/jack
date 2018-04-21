@@ -18,17 +18,17 @@ class CardsBoard extends React.Component {
                         {
                             id: "1",
                             title: "Coffee",
-                            dueDate: "12.12.12"
+                            deactivate_at: "12.12.12"
                         },
                         {
                             id: "2",
                             title: "Gym",
-                            dueDate: "12.12.14"
+                            deactivate_at: "12.12.14"
                         },
                         {
                             id: "3",
-                            title: "Салон",
-                            dueDate: "12.12.14"
+                            title: "Beauty",
+                            deactivate_at: "12.12.14"
                         }
                     ]
                 }
@@ -57,12 +57,13 @@ class CardsBoard extends React.Component {
       console.log(this.state)
     }
 
-    createCard = (e, t, gatherId) => {
+    createCard = (e, t, d, gatherId) => {
         let gather = this.state.gathers.slice();
 
         gather.filter(gather => gather.id === gatherId)[0].cards.push({
             title: e,
-            dueDate: t,
+            deactivate_at: t,
+            description: d,
         });
 
         this.setState({

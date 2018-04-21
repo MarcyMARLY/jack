@@ -18,5 +18,5 @@ class Card(models.Model):
     title = models.CharField(max_length=100)
     card_image = models.URLField()
     gather = models.ForeignKey(Gather, on_delete=models.CASCADE)
-    created_at = models.DateTimeField()
-    deactivate_at = models.DateTimeField()
+    created_at = models.DateField()
+    deactivate_at = models.DateField()

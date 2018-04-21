@@ -43,14 +43,54 @@ def organization_detail(request, or_id):
         ser = OrganizationSerializer(organization)
         return JsonResponse(ser.data)
 
-# @csrf_exempt
-# def gathers(request):
-#
-# @csrf_exempt
-# def gather_detail(request, or_id, g_id):
-#
-# @csrf_exempt
-# def cards(request):
+@csrf_exempt
+def gathers(request, or_id):
+    if request.method == "GET":
+        gathers = Organization.objects.get(pk=or_id).gather_set.all()
+        ser = GatherSerializer(gathers, many = True)
+        return JsonResponse(ser.data, safe = False)
+    elif request.method == "POST":
+        data = JSONParser().parse(request)
+        ser = GatherSerializer(data=data)
+        if(ser.is_valid()):
+            ser.save()
+            return JsonResponse(ser.data,status=201)
+        return JsonResponse(ser.errors, status=400)
+
+
+@csrf_exempt
+def gather_detail(request, or_id, g_id):
+    try:
+        gathers = Organization.objects.get(pk=or_id).gather_set.get(pk=or_id)
+    except Exception as e:
+        return JsonResponse({"error": str(e)}, status=404)
+    if request.method == "GET":
+        ser = GatherSerializer(gathers)
+        return JsonResponse(ser.data)
+    elif request.method == "PUT":
+        data = JSONParser().parse(request)
+        ser = GatherSerializer(gathers, data)
+        if(ser.is_valid()):
+            ser.save()
+            return JsonResponse(ser.data)
+    elif request.method == "DELETE":
+        gathers.delete()
+        ser = OrganizationSerializer(gathers)
+        return JsonResponse(ser.data)
+
+@csrf_exempt
+def cards(request,or_id, g_id):
+    if request.method == "GET":
+        cards = Organization.objects.get(pk=or_id).gather_set.get(pk=g_id).card_set.all()
+        ser = CardSerializer(cards, many = True)
+        return JsonResponse(ser.data, safe = False)
+    elif request.method == "POST":
+        data = JSONParser().parse(request)
+        ser = CardSerializer(data=data)
+        if(ser.is_valid()):
+            ser.save()
+            return JsonResponse(ser.data,status=201)
+        return JsonResponse(ser.errors, status=400)
 #
 # @csrf_exempt
 # def card_detail(request, or_id, g_id, c_id):

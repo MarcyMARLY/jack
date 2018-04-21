@@ -12,7 +12,7 @@ from .serializers import OrganizationSerializer,CardSerializer,GatherSerializer
 @csrf_exempt
 def organizations(request):
     if request.method == "GET":
-        organizations = Organization.objects.all
+        organizations = Organization.objects.all()
         ser = OrganizationSerializer(organizations, many = True)
         return JsonResponse(ser.data, safe = False)
     elif request.method == "POST":
@@ -41,15 +41,16 @@ def organization_detail(request, or_id):
     elif request.method == "DELETE":
         organization.delete()
         ser = OrganizationSerializer(organization)
-        return JsonResponse(ser.data) 
-@csrf_exempt
-def gathers(request):
+        return JsonResponse(ser.data)
 
-@csrf_exempt
-def gather_detail(request, or_id, g_id):
-
-@csrf_exempt
-def cards(request):
-
-@csrf_exempt
-def card_detail(request, or_id, g_id, c_id):
+# @csrf_exempt
+# def gathers(request):
+#
+# @csrf_exempt
+# def gather_detail(request, or_id, g_id):
+#
+# @csrf_exempt
+# def cards(request):
+#
+# @csrf_exempt
+# def card_detail(request, or_id, g_id, c_id):

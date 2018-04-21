@@ -14,8 +14,8 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from django.conf.urls import url, include
+from django.urls import include, path
+from django.conf.urls import url
 from django.views import generic
 from rest_framework import serializers, views, status
 from rest_framework.response import Response
@@ -38,12 +38,13 @@ class EchoView(views.APIView):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', generic.RedirectView.as_view(
-        url='/api/', permanent=False)),
-    url(r'^api/$', get_schema_view()),
-    url(r'^api/auth/', include(
-        'rest_framework.urls', namespace='rest_framework')),
-    url(r'^api/auth/token/obtain/$', TokenObtainPairView.as_view()),
-    url(r'^api/auth/token/refresh/$', TokenRefreshView.as_view()),
-    url(r'^api/echo/$', EchoView.as_view()),
+    path('api/', include('api.urls')),
+    # url(r'^$', generic.RedirectView.as_view(
+    #     url='/api/', permanent=False)),
+    # url(r'^api/$', get_schema_view()),
+    # url(r'^api/auth/', include(
+    #     'rest_framework.urls', namespace='rest_framework')),
+    # url(r'^api/auth/token/obtain/$', TokenObtainPairView.as_view()),
+    # url(r'^api/auth/token/refresh/$', TokenRefreshView.as_view()),
+    # url(r'^api/echo/$', EchoView.as_view()),
 ]

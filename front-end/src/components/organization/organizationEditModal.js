@@ -19,11 +19,7 @@ class OrganizationEditModal extends Component{
     }
     onHandleEditSave = (e) =>{
 
-      const organization ={
-        name: this.state.name,
-        description: this.state.description,
-        address: this.state.address
-      };
+    
       axios.put('http://127.0.0.1:3001/api/organizations/1/',{name: this.state.name,
       description: this.state.description,
       address: this.state.address})

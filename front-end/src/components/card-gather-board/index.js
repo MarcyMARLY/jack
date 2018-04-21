@@ -58,6 +58,11 @@ class CardsBoard extends React.Component {
     }
 
     createCard = (e, t, d, gatherId) => {
+        axios.post('http://127.0.0.1:3001/api/organizations/1/gathers/'+gatherId+'/cards',{title:e, card_image:"https://www.gettyimages.ca/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg",created_at:t,deactivate_at: t,
+        description: d, gather:gatherId
+        })
+        .then(res => {
+        });
         let gather = this.state.gathers.slice();
 
         gather.filter(gather => gather.id === gatherId)[0].cards.push({
@@ -72,6 +77,10 @@ class CardsBoard extends React.Component {
     };
 
     handleGatherCreation = (gatherObject) => {
+        axios.post('http://127.0.0.1:3001/api/organizations/1/gathers/',{id:gatherObject.id, title:gatherObject.title, organization:1
+        })
+        .then(res => {
+        });
         let gatherListCopy = this.state.gathers.slice();
         gatherListCopy.push(gatherObject);
         this.setState({

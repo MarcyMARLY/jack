@@ -4,9 +4,14 @@
 
 .modal-flex-container {
     display: flex;
+    justify-content: space-between;
     width: 80%;
 }
 
 .modal-form {
     width: 80%;
+}
+
+.type-selector {
+    margin-left: -30px;
 }

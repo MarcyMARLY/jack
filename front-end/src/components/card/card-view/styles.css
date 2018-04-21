@@ -32,3 +32,9 @@
 .card-body-info {
   float: right;
 }
+
+.delete-button {
+  display: inline;
+  margin-left: 10px;
+  margin-bottom: 3px;
+}

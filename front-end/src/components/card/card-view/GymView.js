@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
 import './styles.css';
-import {MdDeleteForever} from "react-icons/lib/md/index";
 
-class CardView extends Component {
-
-    deleteCard = () => {
-        console.log(this.props.id)
-    };
-
+class GymView extends Component {
     render() {
         return (
-            <div class="card-jack">
+            <div class="card-gym">
                 <div class='circles-jack'>
                     <label class='circle'>
                     </label>
@@ -31,9 +25,6 @@ class CardView extends Component {
                     </div>
                     <div class="card-body-info">
                         <label>{this.props.deactivate_at}</label>
-                        <div onClick={this.deleteCard} className="delete-button">
-                            <MdDeleteForever size={30}/>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -42,4 +33,4 @@ class CardView extends Component {
 
 }
 
-export default CardView;
+export default GymView;

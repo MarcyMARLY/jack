@@ -10,7 +10,9 @@ class CardContainer extends React.Component {
         const cards = this.props.cards.map((card) => (
                 <CardView
                     title={card.title}
-                    deactivate_at={card.deactivate_at} />
+                    deactivate_at={card.deactivate_at}
+                    id = {card.id}
+                    gatherId = {this.props.gatherId} />
             )
         );
         return (

@@ -1,17 +1,19 @@
 import React, {Component} from 'react';
 import './styles.css';
 import Modal from 'react-modal';
+import CardView from "../card-view/CardView";
 
 const customStyles = {
     content: {
         top: '50%',
         left: '50%',
         right: 'auto',
-        width: '60%',
-        height: '80%',
+        width: '80%',
+        height: '90%',
         bottom: 'auto',
         marginRight: '-50%',
-        transform: 'translate(-50%, -50%)'
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: '#b9f6ca',
     }
 };
 
@@ -49,6 +51,7 @@ class CardModal extends Component {
                 contentLabel="Gather Card creator">
 
                 <h2>Create new card</h2>
+                <hr/>
                 <div className="modal-flex-container">
                     <div className="modal-form">
                         <form className="card-modal-form">
@@ -79,11 +82,18 @@ class CardModal extends Component {
                                 </div>
                             </div>
                             <button onClick={this.createCard} type="submit"
-                                    class="btn btn-primary gather-modal-button">Create
+                                    class="btn btn-primary gather-modal-button">
+                                Create
                             </button>
-                            <button onClick={this.props.onCloseClicked} class="btn btn-dark gather-modal-button">Close
+                            <button onClick={this.props.onCloseClicked} class="btn btn-dark gather-modal-button">
+                                Close
                             </button>
                         </form>
+                    </div>
+                    <div className="type-selector">
+                        <label for="card type">Card type</label>
+                        <CardView title={'Free coffee'} deactivate_at={this.state.deactivate_at}/>
+                        <CardView title={'Gym card'} deactivate_at={this.state.deactivate_at}/>
                     </div>
                 </div>
             </Modal>

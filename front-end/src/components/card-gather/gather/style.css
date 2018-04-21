@@ -15,6 +15,16 @@
     margin-left: 5px;
 }
 
+h1 {
+    display: inline;
+}
+
+.gather-delete {
+    float: right;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+
 hr {
     display: block;
     height: 1px;

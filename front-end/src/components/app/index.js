@@ -9,13 +9,27 @@ import OrganizationTemplate from "../organization/organizationTemplate";
 import Home from "../landing/index"
 
 class App extends Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      organizationId: -1
+    }
+  }
+
+  userLoged = (uid) => {
+    this.setState({
+      organizationId: uid
+    })
+  }
+
     render() {
         return (
             <div>
               <Switch>
-                <Route exact path="/" component={Landing} />
-                <Route path="/board" component={CardsBoard} />
-                <Route path="/organization" component={OrganizationTemplate} />
+                <Route exact path="/" component={() => <Landing userLoged={this.userLoged} />} />
+                <Route path="/board" component={() => <CardsBoard organizationId={this.state.organizationId} /> } />
+                <Route path="/organization" component={ () => <OrganizationTemplate organizationId={this.state.organizationId} /> } />
                 <Route path="/home" component={Home} />
               </Switch>
             </div>

@@ -4,6 +4,8 @@ from api import views
 app_name = 'api'
 urlpatterns = [
     # path('admin/', ),
+    path('users/',views.users),
+    path('users/checks/', views.checkuser),
     path('organizations/', views.organizations),
     path('organizations/<int:or_id>/',views.organization_detail),
     path('organizations/<int:or_id>/gathers/',views.gathers),

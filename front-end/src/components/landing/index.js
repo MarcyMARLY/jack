@@ -114,7 +114,7 @@ class Landing extends Component {
         if (this.state.isLogin) {
             return (
                 <div class="base-jack">
-                    <Login onLoginClose={this.handleLoginClose}/>
+                    <Login userLoged={this.props.userLoged} onLoginClose={this.handleLoginClose}/>
                     <div class="main">
                         <div class="site-wrapper">
                             <div class="site-wrapper-inner">

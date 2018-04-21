@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import Organization,Gather, Card
+from .models import Organization,Gather, Card,User
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields="__all__"
 
 class OrganizationSerializer(serializers.ModelSerializer):
     class Meta:

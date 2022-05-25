@@ -10,7 +10,7 @@ idna==2.6
 itypes==1.1.0
 Jinja2==2.10
 MarkupSafe==1.0
-PyJWT==1.6.1
+PyJWT==2.4.0
 pytz==2018.4
 requests==2.18.4
 uritemplate==3.0.0
